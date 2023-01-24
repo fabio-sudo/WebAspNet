@@ -1,0 +1,353 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\WebCursoProgramacao.bundle.scp.css",
+      "PackagePath": "staticwebassets\\WebCursoProgramacao.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\css\\Menu.css",
+      "PackagePath": "staticwebassets\\css\\Menu.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\css\\estilo.css",
+      "PackagePath": "staticwebassets\\css\\estilo.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\AlunoCursoIcone.ico",
+      "PackagePath": "staticwebassets\\img\\AlunoCursoIcone.ico"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\AlunoCursoLogo.png",
+      "PackagePath": "staticwebassets\\img\\AlunoCursoLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\CursoIcone.ico",
+      "PackagePath": "staticwebassets\\img\\CursoIcone.ico"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\CursoLogo.png",
+      "PackagePath": "staticwebassets\\img\\CursoLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\EstudanteIco.ico",
+      "PackagePath": "staticwebassets\\img\\EstudanteIco.ico"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\PeriodoIcone.ico",
+      "PackagePath": "staticwebassets\\img\\PeriodoIcone.ico"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\PeriodoLogo.png",
+      "PackagePath": "staticwebassets\\img\\PeriodoLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\Professor.png",
+      "PackagePath": "staticwebassets\\img\\Professor.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\ProfessorLogo.ico",
+      "PackagePath": "staticwebassets\\img\\ProfessorLogo.ico"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\SairLogo.png",
+      "PackagePath": "staticwebassets\\img\\SairLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\estudanteLogo.png",
+      "PackagePath": "staticwebassets\\img\\estudanteLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\loading.gif",
+      "PackagePath": "staticwebassets\\img\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\img\\nofoto.jpg",
+      "PackagePath": "staticwebassets\\img\\nofoto.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\Alerta.js",
+      "PackagePath": "staticwebassets\\js\\Alerta.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\Aluno.js",
+      "PackagePath": "staticwebassets\\js\\Aluno.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\AlunoCurso.js",
+      "PackagePath": "staticwebassets\\js\\AlunoCurso.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\Curso.js",
+      "PackagePath": "staticwebassets\\js\\Curso.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\Menu.js",
+      "PackagePath": "staticwebassets\\js\\Menu.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\Periodo.js",
+      "PackagePath": "staticwebassets\\js\\Periodo.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\Professor.js",
+      "PackagePath": "staticwebassets\\js\\Professor.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WebCursoProgramacao.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.WebCursoProgramacao.props",
+      "PackagePath": "build\\WebCursoProgramacao.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.WebCursoProgramacao.props",
+      "PackagePath": "buildMultiTargeting\\WebCursoProgramacao.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.WebCursoProgramacao.props",
+      "PackagePath": "buildTransitive\\WebCursoProgramacao.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
