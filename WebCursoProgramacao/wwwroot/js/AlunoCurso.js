@@ -73,9 +73,9 @@ async function listar() {
             //------------------------------------------------------Formulário Dinamicamente com Js
             //Passando os parâmetros para abrir uma janela 
             type: "popup",
-            urlrecuperar: "Aluno/BuscarAlunosPorId",
-            parametrorecuperar: "idAluno",
-            urlguardar: "Aluno/AdiconarAluno",
+            urlrecuperar: "AlunoCurso/BuscarAlunoCurso",
+            parametrorecuperar: "idAlunoCurso",
+            urlguardar: "AlunoCurso/AdicionarAlunoCurso",
             formulario: [//Criando formulário campos e preenchendo de acordo com nosso objeto
 
                 [
