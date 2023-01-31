@@ -1,4 +1,5 @@
-﻿//Criar Combobox
+﻿//-------------------------------------------Cria objetos
+//Criar Combobox
 function metodoConstrutor(urlApi, labelApi, controleApi, objName, objConteiner) { 
 
      //Pegando URL API 
@@ -77,27 +78,36 @@ async function tabelaCriar(objConteinerTabela, urlTabela, paginacaoTabela) {
 
     var response = await fetch(urlTabela);
     var data = await response.json();
-
+    var QuantiadePaginas = Math.ceil(data.length / 5);
 
     var paginacao = paginacaoTabela;
 
-    if (paginacao == null) {
+   if (paginacao == null) {
 
         paginacao = 1;
     }
 
-    var rodapeTabela = `
+   var rodapeTabela = `
     <div class="alinhaPaginacao" id="PaginacaoGride">
        <a class="btn btn-danger" onclick="paginacaoTabela(${paginacao},-1,${data.length})">Voltar </a>
-       <a class="btn btn-primary" id="idPaginacao">${paginacao} </a>   
+   `
+
+    for (let i = 1; i <= QuantiadePaginas; i++) {
+        if (i == paginacao) {
+            rodapeTabela += `
+            <a class="btn btn-primary" id = "idPaginacao" onclick="paginacaoTabela(${i}, 0 ,${data.length})" > ${i} </a>
+        `
+        } else {
+            rodapeTabela += `
+            <a class="btn btn-danger" id = "idPaginacao" onclick="paginacaoTabela(${i}, 0 ,${data.length})" > ${i} </a>
+        `
+        }
+    }
+
+    rodapeTabela += `
        <a class="btn btn-danger" onclick="paginacaoTabela(${paginacao},1,${data.length})">Avançar </a>
     </div>
-`;
-
-    //Função para paginação
-
-
-
+     `;
 
     //Lista de itens Utilizando a função para delimitar
     const listaItemObj =
@@ -150,9 +160,13 @@ async function tabelaCriar(objConteinerTabela, urlTabela, paginacaoTabela) {
              `;
 
 
-    root.insertAdjacentHTML('afterbegin', tabela);
+    root.insertAdjacentHTML('beforeend', tabela);
+
 }
 
+
+
+//-----------------------------------------Funções 
 //Buscar itens gride por nome
 async function buscarPorNome() {
 
@@ -161,35 +175,14 @@ async function buscarPorNome() {
 
     if (nomeBuscar.value != "") {
 
-        var tabelaRem = document.getElementById("tabelaAluno");
-        var menuRem = document.getElementById("MenuBuscarAluno");
-        var paginacao = document.getElementById("PaginacaoGride");
+        limparGride();
 
-        tabelaRem.remove();
-        menuRem.remove();
-        paginacao.remove();
-
-        document.getElementById("divLoading").style.display = "block";
-        //não está funcionado
         tabelaCriar("tabelaAlunoBuscar", "BuscarAlunosPorNomeFK/?nomeAluno=" + nomeBuscar.value, null);
-
-        document.getElementById("divLoading").style.display = "none";
 
     } else {
 
-        var tabelaRem = document.getElementById("tabelaAluno");
-        var menuRem = document.getElementById("MenuBuscarAluno");
-        var paginacao = document.getElementById("PaginacaoGride");
-        
-        tabelaRem.remove();
-        menuRem.remove();
-        paginacao.remove();
-
-        document.getElementById("divLoading").style.display = "block";
-
+        limparGride();
         tabelaCriar("tabelaAlunoBuscar", "BuscarAlunoFK", null);
-
-        document.getElementById("divLoading").style.display = "none";
     }
 
 
@@ -198,24 +191,11 @@ async function buscarPorNome() {
 //Limpar dados carregados
 async function limpar() {
 
-
-        var tabelaRem = document.getElementById("tabelaAluno");
-        var menuRem = document.getElementById("MenuBuscarAluno");
-        var paginacao = document.getElementById("PaginacaoGride");
-
-        tabelaRem.remove();
-        menuRem.remove();
-        paginacao.remove();
-
-        document.getElementById("divLoading").style.display = "block";
+    limparGride();
 
         tabelaCriar("tabelaAlunoBuscar", "BuscarAlunoFK", null);
 
-        document.getElementById("divLoading").style.display = "none";
-    
-
-
-}
+   }
 
 //Paginação do Gride 
 async function listItems(items, pageActual, limitItems)
@@ -254,28 +234,31 @@ async function paginacaoTabela(pageActual, valor, totalItens) {
         return;
     }
     else {
-        var tabelaRem = document.getElementById("tabelaAluno");
-        var menuRem = document.getElementById("MenuBuscarAluno");
-        var paginacao = document.getElementById("PaginacaoGride");
-
-        paginacao.remove();
-        tabelaRem.remove();
-        menuRem.remove();
+        limparGride();
 
         //Cria tabela como novos parametros para pagina atual
         tabelaCriar("tabelaAlunoBuscar", "BuscarAlunoFK", pageActual);
     }
 
-
-
-  /*  var totalPage = Math.ceil(data.length / limitItems);
-    var count = (pageActual * limitItems) - limitItems;
-    var delimiter = count + limitItems;*/
-
 }
 
+//Limpar Grid
+async function limparGride() {
+
+    $("#tabelaAluno").remove();
+    $("#MenuBuscarAluno").remove();
+    $("#PaginacaoGride").remove();
+}
+
+
+
+//Inicializa o formulário preenchendo os combobox
 metodoConstrutor("BuscarCursoFK", "Curso", "cb", "nomeCurso", "comboboxCurso");
 metodoConstrutor("BuscarPeriodoFK", "Periodo", "cb", "nomePeriodo", "comboboxPeriodo");
 metodoConstrutor("BuscarProfessorFK", "Professor", "cb", "nomeProfessor", "comboboxProfessor");
 
+//inicializa o formulário preenchendo o gride
 tabelaCriar("tabelaAlunoBuscar", "BuscarAlunoFK", null);
+
+
+
