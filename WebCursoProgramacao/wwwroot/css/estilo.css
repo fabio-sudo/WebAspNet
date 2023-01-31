@@ -1,3 +1,69 @@
 ﻿.col-md-6 {
     width: 25%;
 }
+.hide {
+
+display:none;
+
+}
+
+
+.alinhaPaginacao {
+    margin: 5px 0px 0px 0px;
+}
+
+.table {
+    margin: 2px 0px 0px 0px;
+}
+.botoes {
+    margin: 5px 0px 0px 0px;
+}
+
+.tabelaAlinha {
+    margin: 20px 0px 0px 0px;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+th {
+    text-align: inherit;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+user agent stylesheet
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+user agent stylesheet
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+
+

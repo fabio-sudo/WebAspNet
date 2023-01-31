@@ -1,13 +1,84 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
-
 <h1>Matricula</h1>
+
+<button onclick="EditarGenerico(0)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastrarAlterarAlunoCurso">
+    Novo
+</button>
+
+<div class="modal fade" id="cadastrarAlterarAlunoCurso"
+     data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lbltitulo">Aluno Curso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+            <fieldset>
+            <form id="frmFormularioAlunoCurso" method="post" class="mb-3">
+               <div class ="row">
+                   <div class="col-md-6">
+
+                   <label>Dia da Semana</label>
+                         <select class="form-control" name="diaSemanaCurso">
+                            <option class="form-control" value="Segunda-Feira">Segunda-Feira</option>
+                            <option class="form-control" value="Terça-Feira">Terça-Feira</option>
+                            <option class="form-control" value="Quarta-Feira">Quarta-Feira</option>
+                            <option class="form-control" value="Quinta-Feira">Quinta-Feira</option>
+                            <option class="form-control" value="Sexta-Feira">Sexta-Feira</option>
+                            <option class="form-control" value="Sabado">Sabado</option>
+                        </select>
+                     </div>
+                     
+                    <!-- <div class="col-md-6"> -->
+                            <!---   <label>Status</label>-->
+                            <!---   <select class="form-control" name="statusAlunoCurso">-->
+                              <!---     <option class="form-control" value="Espera">Espera</option>-->
+                              <!---     <option class="form-control" value="Cursando">Cursando</option>-->
+                             <!---  </select>-->
+                            <!---  </div>-->
+
+                       <!--Criação dos combobox dinamicamente    -->
+                       <div class="col-md-6">
+                         <div id="comboboxCurso"></div>
+                       </div>
+
+                       <div class="col-md-6">
+                         <div id="comboboxPeriodo"></div>
+                       </div>
+
+                       <div class="col-md-6">
+                         <div id="comboboxProfessor"></div>
+                       </div>
+
+                        <!--Criação da tabela dinamicamente    -->
+                        <div class="tabelaAlinha">
+                          <div id="tabelaAlunoBuscar"> </div>
+                        </div>
+
+               </div>
+             </form>
+             </fieldset>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btnCerrarModal" data-bs-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-primary" onclick="GuardarGenericoFormulario('frmFormulario','popup')">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div id="divTabla">
 </div>
 
 @section Scripts{
 
     <script src="~/js/AlunoCurso.js"></script>
+    <script src="~/js/AlunoCursoAltExc.js" defer></script>
     <link href="~/css/estilo.css" rel="stylesheet">
 }

@@ -94,5 +94,22 @@ namespace WebCursoProgramacao.Controllers
             return await ClasseClienteHttp.AdicionarLista<AlunoCurso>(_httpClientFactory, baseurl, "/api/Aluno_Curso/AdicionarAlunoCurso", alunoCls);
         }
 
+        public async Task<List<AlunoFK>> BuscarAlunosPorNomeFK(string nomeAluno)
+        {
+            //Rota igual a do API
+            if (nomeAluno != null)
+            {
+                List<AlunoFK> lista = await ClasseClienteHttp.BuscarLista<AlunoFK>(_httpClientFactory, baseurl, "/api/AlunoFK/BuscarAlunoPorNomeFK" + nomeAluno);
+
+                return lista;
+            }
+            else
+            {
+
+                return await BuscarAlunoFK();
+            }
+        }
+
+
     }
 }

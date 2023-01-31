@@ -67,7 +67,7 @@ async function listar() {
 
             ]
 
-        },
+        }/*,
 
         {
             //------------------------------------------------------Formulário Dinamicamente com Js
@@ -81,9 +81,57 @@ async function listar() {
                 [
                     {
                         class: "col-md-6 d-none",// d-none -> Campo fica visible false
-                        label: "Ordem",
+                        label: "Id",
+                        type: "text",
+                        name: "idAlunoCurso"
+                    },
+                    {
+                        class: "col-md-6",// d-none -> Campo fica visible false
+                        label: "Matricula",
                         type: "text",
                         name: "OrdemMatricula"
+                    },
+                    {
+                        class: "col-md-6",
+                        label: "Aluno",
+                        type: "combobox",
+                        name: "idAluno",
+                        data: dataAluno,
+                        propiedadmostrar: "nomeAluno",
+                        valuemostrar: "idAluno",
+                        id: "cbAlunoBuscarCad"
+                    },
+                    {
+                        class: "col-md-6",
+                        label: "Curso",
+                        type: "combobox",
+                        name: "idCurso",
+                        data: dataCurso,
+                        propiedadmostrar: "nomeCurso",
+                        valuemostrar: "idCurso",
+                        id: "cbCursoBuscarCad"
+                    }
+                    ,
+                    {
+                        class: "col-md-6",
+                        label: "Periodo",
+                        type: "combobox",
+                        name: "idPeriodo",
+                        data: dataPeriodo,
+                        propiedadmostrar: "nomePeriodo",
+                        valuemostrar: "idPeriodo",
+                        id: "cbPeriodoBuscarCad"
+                    }
+                    ,
+                    {
+                        class: "col-md-6",
+                        label: "Professor",
+                        type: "combobox",
+                        name: "idProfessor",
+                        data: dataProfessor,
+                        propiedadmostrar: "nomeProfessor",
+                        valuemostrar: "idProfessor",
+                        id: "cbProfessorBuscarCad"
                     },
                     {
                         class: "col-md-6",
@@ -95,18 +143,16 @@ async function listar() {
                     {
                         class: "col-md-6",
                         label: "Status",
-                        type: "text",
-                        name: "StatusCurso",
+                        type: "comboboxStr",
+                        name: "statusCurso",
                         classControl: "ob"
                     }
-                    
-
-
+        
                 ]
             ]
-
+            
         }
 
-
+*/
 	)
 }

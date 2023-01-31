@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rpkzfBbtcKh5lC9rHiTyqj2DYFvDvZXmEqEY5lGwhng=",
+  "Hash": "/OqXgCgP5Pb75eBkP5buKllh+uI0xaL0rkVehKwT5uk=",
   "Source": "WebCursoProgramacao",
   "BasePath": "_content/WebCursoProgramacao",
   "Mode": "Default",
@@ -389,6 +389,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\AlunoCurso.js"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\AlunoCursoAltExc.js",
+      "SourceId": "WebCursoProgramacao",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\",
+      "BasePath": "_content/WebCursoProgramacao",
+      "RelativePath": "js/AlunoCursoAltExc.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AlunoCursoAltExc.js"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\Curso.js",
