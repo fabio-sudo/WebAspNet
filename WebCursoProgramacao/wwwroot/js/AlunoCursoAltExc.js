@@ -78,8 +78,10 @@ async function tabelaCriar(objConteinerTabela, urlTabela, paginacaoTabela) {
 
     var response = await fetch(urlTabela);
     var data = await response.json();
-    var QuantiadePaginas = Math.ceil(data.length / 5);
 
+
+    //--------------------------Footer Paginação
+    var QuantiadePaginas = Math.ceil(data.length / 5);
     var paginacao = paginacaoTabela;
 
    if (paginacao == null) {
@@ -89,36 +91,39 @@ async function tabelaCriar(objConteinerTabela, urlTabela, paginacaoTabela) {
 
    var rodapeTabela = `
     <div class="alinhaPaginacao" id="PaginacaoGride">
-       <a class="btn btn-danger" onclick="paginacaoTabela(${paginacao},-1,${data.length})">Voltar </a>
+       <a class="btn btn-dark" onclick="paginacaoTabela(${paginacao},-1,${data.length})">Voltar </a>
    `
 
     for (let i = 1; i <= QuantiadePaginas; i++) {
         if (i == paginacao) {
             rodapeTabela += `
-            <a class="btn btn-primary" id = "idPaginacao" onclick="paginacaoTabela(${i}, 0 ,${data.length})" > ${i} </a>
+            <a class="btn btn-danger" id = "idPaginacao" onclick="paginacaoTabela(${i}, 0 ,${data.length})" > ${i} </a>
         `
         } else {
             rodapeTabela += `
-            <a class="btn btn-danger" id = "idPaginacao" onclick="paginacaoTabela(${i}, 0 ,${data.length})" > ${i} </a>
+            <a class="btn btn-dark" id = "idPaginacao" onclick="paginacaoTabela(${i}, 0 ,${data.length})" > ${i} </a>
         `
         }
     }
 
     rodapeTabela += `
-       <a class="btn btn-danger" onclick="paginacaoTabela(${paginacao},1,${data.length})">Avançar </a>
+       <a class="btn btn-dark" onclick="paginacaoTabela(${paginacao},1,${data.length})">Avançar </a>
     </div>
      `;
+    //--------------------------------------------------------
 
-    //Lista de itens Utilizando a função para delimitar
+
+    //-------------------------------------------------------Delimitador de objetos no Gride
     const listaItemObj =
         await listItems(data, paginacao, 5);
+    //-------------------------------------------------------------------
 
-    //Criação das rows da tabela
+
+    //--------------------------------------------Criação das colunas da tabela
     var bodyTabela = listaItemObj.map((item) => {
-
         return `<tr>
                         <td>
-                        <input type="checkbox" class="custom-control-input">
+                        <input type="checkbox" class="custom-control-input" id="${item.idAluno}" onchange="onChange(this,${item.idAluno})"/>
                         </td>
                         <td>${item.idAluno}</td>
                         <td>${item.nomeAluno}</td>
@@ -127,25 +132,59 @@ async function tabelaCriar(objConteinerTabela, urlTabela, paginacaoTabela) {
                       </tr>`;
     }).join('');
 
+    //-----------------------------------------------Menu de busca 
     var buscarMenu = 
-            `<div id="MenuBuscarAluno">
-            <div class="col-md-6">
-            <label>Aluno</label>
-            <input type="text" class="form-control" id="nomeAlunoBuscar"> 
-            </div>
-            <div class="botoes">
-            <a  class="btn btn-primary" onclick="buscarPorNome()">Buscar </a>
-            <a  class="btn btn btn-danger" onclick="limpar()">Limpar </a>
-            </div>
-            </div>
+        `   <div class="caixaTextoBuscar">
+               <label Id="lbAluno">Aluno</label>
+               <br/>
+               <input type="text" class="form-control" id="nomeAlunoBuscar"/> 
+                   <div class="botoesBusca">
+                      <a  class="btn btn-dark" onclick="buscarPorNome()">Buscar </a>
+                      <a  class="btn btn-danger" onclick="Limpar()">Limpar </a>
+                   </div>
+              </div>    
              `;
 
+//-----------------------------------------------Botões Laterais
+var botoesLaterais = `
+    <div class="BotoesAddRemove">
+    <a class="btn btn-dark" id="btAdd">ADD</a>
+    <a class="btn btn-dark" id="btRem">REM</a>
+    </div>
+     `;
+//-----------------------------------------------Tabela Alunos ADD
+var tabelaAlunoCad = `     
+
+<div class="GridAlunoCad">
+            <table class="table" id="tabelaAlunoCad">
+            <thead class="thead-dark">
+                <tr>
+                        <th scope="col">...</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Celular</th>
+                </tr>
+             </thead>
+                  <tbody>
+                        ${bodyTabela} 
+                </tbody>
+            </table> 
+                ${rodapeTabela}
+     </div>
+
+</div>
+
+`
+
+//------------------------------------------------Criação da Tabela
     var tabela = `
-            ${buscarMenu}
+            ${buscarMenu} 
+        <div class="GridAluno">
             <table class="table" id="tabelaAluno">
             <thead class="thead-dark">
                 <tr>
-                        <th scope="col">Selecionar</th>
+                        <th scope="col">...</th>
                         <th scope="col">ID</th>
                         <th scope="col">Nome</th>
                         <th scope="col">CPF</th>
@@ -157,8 +196,19 @@ async function tabelaCriar(objConteinerTabela, urlTabela, paginacaoTabela) {
                 </tbody>
             </table>
                 ${rodapeTabela}
+        </div>
+           <div>
+               ${tabelaAlunoCad}
+         </div>
+         <div>
+               ${botoesLaterais}
+         </div>
+
+
+      </div>
              `;
 
+    //--------------------------------Inserir tabela na div do HTML
 
     root.insertAdjacentHTML('beforeend', tabela);
 
@@ -250,7 +300,10 @@ async function limparGride() {
     $("#PaginacaoGride").remove();
 }
 
-
+//Recebe id checked box
+function onChange(element,id) {
+    console.log('Agreement changed to ' + element.checked+ id);
+}
 
 //Inicializa o formulário preenchendo os combobox
 metodoConstrutor("BuscarCursoFK", "Curso", "cb", "nomeCurso", "comboboxCurso");
