@@ -24,7 +24,22 @@
     width: 28%;
     display: inline-block;
 }
+#cabecarioForm {
 
+background-color:black;
+
+}
+#lbltitulo {
+
+color:white;
+}
+
+
+.imgCss {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
 .tabelaAlinha {
     margin: 10px 0px 0px 0px;
     width: 100%;
