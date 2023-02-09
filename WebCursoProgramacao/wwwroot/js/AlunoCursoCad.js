@@ -103,9 +103,8 @@ async function tabelaCriar(urlTabela, paginacaoTabela) {
 //Metodo add item Gride
 async function metodoAddItemLista() {
 
-    var listaMarcados = document.getElementsByTagName("input");
+    var listaMarcados = document.getElementsByClassName("cbAluno");
 
-    let contador = 0;
     for (loop = 0; loop < listaMarcados.length; loop++) {
 
         var item = listaMarcados[loop];
@@ -114,24 +113,52 @@ async function metodoAddItemLista() {
             dataTabela.map((itemTabela) => {
                 if (item.id == itemTabela.idAluno) {
 
-                  
+
                     dataTabelaCad.push(itemTabela);
                     dataTabela.splice(dataTabela.indexOf(itemTabela), 1);
 
                 }
-                contador++;
             });
         }
     }
 
     limparGride();
 
-   await  criaTabelaAluno(dataTabela, 1);
-   await  criaTabelaAlunoCurso(dataTabelaCad, 1);
+    await criaTabelaAluno(dataTabela, 1);
+    await criaTabelaAlunoCurso(dataTabelaCad, 1);
+
 }
 
 //Método rem item GridAlunoCurso
+async function metodoRemoveItemLista() {
 
+    var listaMarcados = document.getElementsByClassName("cbAlunoCurso");
+
+    for (loop = 0; loop < listaMarcados.length; loop++) {
+
+        var item = listaMarcados[loop];
+        if (item.type == "checkbox" && item.checked) {
+
+            dataTabelaCad.map((itemTabela) => {
+                if (item.id == itemTabela.idAluno) {
+
+                    dataTabelaCad.splice(dataTabelaCad.indexOf(itemTabela), 1);                      
+                    dataTabela.push(itemTabela);
+
+                }
+            });
+        }
+    }
+
+    limparGride();
+
+    await criaTabelaAluno(dataTabela.sort(), 1);
+    await criaTabelaAlunoCurso(dataTabelaCad.sort(), 1);
+
+
+
+
+}
 
 //Buscar itens gride por nome
 async function buscarPorNome(paginaAtual) {
@@ -155,17 +182,23 @@ async function buscarPorNome(paginaAtual) {
             paginacao = 1;
         }
 
-        const listaItemObj =
-            await listItems(novaLista, paginacao, 5);
 
-        await criaTabelaAluno(listaItemObj, paginacao);
-
-        //tabelaCriar("tabelaAlunoBuscar", "BuscarAlunosPorNomeFK/?nomeAluno=" + nomeBuscar.value, null);
+        await criaTabelaAluno(novaLista, paginacao);
+        await criaTabelaAlunoCurso(dataTabelaCad, 1);
 
     } else {
 
-        limparGride();
-        tabelaCriar("tabelaAlunoBuscar", "BuscarAlunoFK", null);
+        //Pegando URL API 
+        const url = "BuscarAlunosPorNomeFK/?nomeAluno=" + nomeBuscar.value;
+        const response = await fetch(url);
+
+        newData = await response.json();
+
+        newData = newData.filter(item => !dataTabelaCad.some(item2 => item2.id === item.id));
+        newData.length;
+
+        await criaTabelaAluno(listaData, paginacao);
+        await criaTabelaAlunoCurso(dataTabelaCad, 1);
     }
 
 
@@ -188,7 +221,7 @@ async function criaTabelaAluno(lista, paginacao) {
     lista = await listItems(lista, paginacao, 5);
 
     //Itens da tabela
-    var bodyTabelaBusca = await criaItensGrid(lista);
+    var bodyTabelaBusca = await criaItensGrid(lista,"cbAluno");
 
     var tabelaBusca = ` 
             ${buscarMenuBusca} 
@@ -233,7 +266,7 @@ async function criaTabelaAlunoCurso(lista, paginacao) {
     lista = await listItems(lista, paginacao, 5);
 
     //Itens da tabela
-    var bodyTabela = await criaItensGrid(lista);
+    var bodyTabela = await criaItensGrid(lista,"cbAlunoCurso");
 
     var tabelaAlunoCurso = `     
       <div class="GridAlunoCad" id="GridCadastraAluno">
@@ -284,7 +317,7 @@ async function criaBotoesLaterais() {
     const botoesLaterais = `
     <div class="BotoesAddRemove" id="BotoesGrid">
     <a class="btn btn-dark" id="btAdd" onclick="metodoAddItemLista()">ADD</a>
-    <a class="btn btn-dark" id="btRem">REM</a>
+    <a class="btn btn-dark" id="btRem" onclick="metodoRemoveItemLista()">REM</a>
     </div>
      `;
 
@@ -293,13 +326,13 @@ async function criaBotoesLaterais() {
 }
 
 //Busca itens do dataGrid
-async function criaItensGrid(lista) {
+async function criaItensGrid(lista,nameClass) {
 
     //Items da tabela
     var itemsTabela = lista.map((item) => {
         return `<tr>
                         <td>
-                        <input type="checkbox" class="custom-control-input" id="${item.idAluno}" onchange="onChange(this,${item.idAluno})"/>
+                        <input type="checkbox" class="${nameClass}" id="${item.idAluno}" onchange="onChange(this,${item.idAluno})"/>
                         </td>
                         <td>${item.idAluno}</td>
                         <td>${item.nomeAluno}</td>
