@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6Y14OhFL/qBoRCD0JsrWJ8FsGN7qalW3ruyHxdAARcs=",
+  "Hash": "bIaULbj0Amm1JwDNLpN1wpSfcxEnNLGcAmUwJZLvar0=",
   "Source": "WebCursoProgramacao",
   "BasePath": "_content/WebCursoProgramacao",
   "Mode": "Default",
@@ -391,12 +391,12 @@
       "OriginalItemSpec": "wwwroot\\js\\AlunoCurso.js"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\AlunoCursoCad.js",
+      "Identity": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\AlunoCursoCrud.js",
       "SourceId": "WebCursoProgramacao",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\",
       "BasePath": "_content/WebCursoProgramacao",
-      "RelativePath": "js/AlunoCursoCad.js",
+      "RelativePath": "js/AlunoCursoCrud.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -405,7 +405,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\AlunoCursoCad.js"
+      "OriginalItemSpec": "wwwroot\\js\\AlunoCursoCrud.js"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\WebCursoProgramacao\\WebCursoProgramacao\\wwwroot\\js\\Curso.js",
