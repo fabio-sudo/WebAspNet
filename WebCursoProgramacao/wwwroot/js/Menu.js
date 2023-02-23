@@ -419,9 +419,6 @@ function llenarCombo(data, idcontrol, propiedadId, propiedadNombre, textoprimera
     //document.getElementById(idcontrol).innerHTML = contenido;
 }
 
-
-
-
 async function fetchPost(url, tiporespuesta, frm, callback) {
     try {
         var raiz = document.getElementById("hdfOculto").value;
@@ -474,6 +471,7 @@ var objConfiguracionGlobal;
 var objBusquedaGlobal;
 var objFormularioGlobal;
 var dataCompleta;
+
 function pintar(objConfiguracion, objBusqueda, objFormulario) {
 
     var contenido = "";
@@ -630,7 +628,9 @@ function pintar(objConfiguracion, objBusqueda, objFormulario) {
 
 
 }
+
 var filasChecks = []
+
 function manejoCheck() {
     if (objConfiguracionGlobal.check) {
         var checks = document.getElementsByClassName("Check");
@@ -697,6 +697,10 @@ var indiceBloque = 0;
 
 var registrosPagina = 15;
 var idsChecks = [];
+
+
+
+
 function generarTabla(res) {
     var inicio = indicePagina * registrosPagina;
     var fin = inicio + registrosPagina;
@@ -724,6 +728,10 @@ function generarTabla(res) {
     var obj;
     var propiedadActual;
     var existeIdCheck = false;
+
+
+
+
     contenido += "<tbody id='tbody'>";
     for (var i = inicio; i < fin; i++) {
         if (nregistros - 1 >= i) {
@@ -794,6 +802,12 @@ function generarTabla(res) {
     return contenido;
 }
 
+
+
+
+
+
+ 
 
 function rowClickRecuperarGenerico(id) {
     if ((objFormularioGlobal != undefined && objFormularioGlobal.type == "popup") || (objConfiguracionGlobal != undefined

@@ -1,4 +1,28 @@
-﻿.col-md-6 {
+﻿#AlinhaFiltros {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.campoFiltro {
+    margin-right: 5px;
+    width: 20%;
+    vertical-align: middle;
+    float:right;
+}
+
+.campoFiltroBusca {
+    margin-right: 5px;
+    width: 30%;
+    vertical-align: middle;
+    float: left;
+}
+#nomeAlunoBuscarMenu {
+    width: 100%;
+}
+
+
+.col-md-6 {
     width: 25%;
 }
 

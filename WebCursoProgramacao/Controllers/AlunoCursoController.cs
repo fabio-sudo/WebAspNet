@@ -34,6 +34,14 @@ namespace WebCursoProgramacao.Controllers
             return lista;
         }
 
+        //Metodo com objetos para testar
+        public async Task<List<Aluno_Curso>> BuscarAluno_Curso()
+        {
+            List<Aluno_Curso> lista = await ClasseClienteHttp.BuscarLista<Aluno_Curso>(_httpClientFactory, baseurl, "/api/Aluno_Curso/BuscarAlunoCursoLista");
+            //Rota igual a do API
+            return lista;
+        }
+
         public async Task<List<AlunoCurso>> BuscarAlunoCursoPorNome(string nomeAluno , int idCurso, int idPeriodo, int idProfessor)
         {
             List<AlunoCurso> lista = await ClasseClienteHttp.BuscarLista<AlunoCurso>(_httpClientFactory, baseurl, "/api/Aluno_Curso");

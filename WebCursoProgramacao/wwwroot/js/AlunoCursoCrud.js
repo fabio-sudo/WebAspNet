@@ -533,6 +533,192 @@ async function limparGride() {
 
 }
 
+//-------------------------------------------------------Cria Tabela Principal
+//Combobox
+async function Filtros(url, id, nome, label) {
+
+        const response = await fetch(url);
+        var dataFiltro = await response.json();
+
+    var itemFiltro = '<option class="form-control" value="" >Todos</option >';
+        dataFiltro.map((item) => {
+
+            itemFiltro += `<option class="form-control" value="${item[id]}" >${item[nome]}</option >`
+        });
+
+    var filtro = `    <div class="campoFiltro">
+                      <label class"lbFiltro">${label}</label>
+                      <select class="form-control" name="ListaCurso">
+                       ${itemFiltro}   </select>
+                       </div>`
+       ;
+
+        return filtro;
+}
+
+async function BuscarConteudoGrid(url) {
+
+    const response = await fetch(url);
+    var listaRetorno = await response.json();
+
+    var rows = "";
+    listaRetorno.map((item) => {
+
+        rows += `<tr><td> 
+                       <img style="width:100px;height:100px" src="${item.alunoCls.imgStr}">
+                      </td></tr>`;
+    });
+
+    return rows;
+}
+
+
+async function GerarTabelaPrincipal() {
+
+    const criaTabela = document.getElementById('Tabela');
+
+    var filtroCurso = await  Filtros("BuscarCursoFK","idCurso", "nomeCurso", "Curso");
+    var filtroPeriodo = await Filtros("BuscarPeriodoFK","idPeriodo", "nomePeriodo", "Periodo");
+    var filtroProfessor = await Filtros("BuscarProfessorFK", "idProfessor", "nomeProfessor", "Professor");
+    var corpoTabela = await BuscarConteudoGrid("BuscarAluno_Curso");
+
+    const menuBusca = `<div class="caixaTextoBuscar" id="MenuBuscaAlunoCurso">
+        <div id="AlinhaFiltros">
+        <div class="campoFiltroBusca">
+        <label Id="lbAluno">Escreva o nome a Buscar</label>
+        <br />
+        <input type="text" class="form-control" id="nomeAlunoBuscarMenu" />
+        </div>
+        ${filtroCurso}
+        ${filtroPeriodo}
+        ${filtroProfessor}
+        </div>
+        <div class="botoesBusca">
+            <a class="btn btn-primary" onclick="">Buscar </a>
+            <a class="btn btn-danger" onclick="">Limpar </a>
+        </div>
+    </div>    
+             `;
+
+    var tabela = "<br/>";
+    tabela += `${menuBusca}`;
+    tabela += `
+    <div class='table-responsive'>
+    <table id='tablita' class='table'>
+    <thead>
+      <tr>
+        <th scope="col">Foto</th>
+        <th scope="col">Matricula</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Contato</th>
+        <th scope="col">Curso</th>
+        <th scope="col">Professor</th>
+        <th scope="col">Período</th>
+        <th scope="col">Dia do Curso</th>
+        <th scope="col">Status</th>
+     </tr>
+    </thead>
+    <body>
+
+${corpoTabela}
+
+
+    </body>
+    </table>
+   </div>`;
+
+
+
+
+
+
+
+    criaTabela.insertAdjacentHTML('beforeend', tabela);
+/*
+ * 
+ *     <td>
+    <img style="width:100px;height:100px" src="${}">
+    </td>
+    <td style='vertical-align:middle'><span>" ${} "</span></td>
+
+
+    var nregistros = dataCompleta.length;
+    var obj;
+    var propiedadActual;
+    var existeIdCheck = false;
+
+
+    contenido += "<tbody id='tbody'>";
+    for (var i = inicio; i < fin; i++) {
+        if (nregistros - 1 >= i) {
+            obj = res[i]
+            contenido += `<tr ${objConfiguracionGlobal != null && objConfiguracionGlobal.cursor != undefined ?
+                "style='cursor:pointer'" : ''}
+
+                        ${objConfiguracionGlobal != null && objConfiguracionGlobal.rowClickRecuperar != undefined ?
+                    `onclick='rowClickRecuperarGenerico(${obj[objConfiguracionGlobal.propiedadId]})'
+                    style='cursor:pointer'` : ""}
+
+                        ${objConfiguracionGlobal != null && objConfiguracionGlobal.rowClick != undefined ?
+                    `onclick='rowClickEvent(${JSON.stringify(obj)})'` : ""}
+                  >`;
+            if (objConfiguracionGlobal != undefined && objConfiguracionGlobal.check == true) {
+                existeIdCheck = (idsChecks.indexOf(obj[objConfiguracionGlobal.propiedadId]) > -1);
+                contenido += `<td><input type='checkbox'
+                                 ${existeIdCheck == true ? "checked" : ""}
+                                class='Check ${obj[objConfiguracionGlobal.propiedadId]}'
+                             name="${objConfiguracionGlobal.propiedadId}[]"
+                        value="${obj[objConfiguracionGlobal.propiedadId]}" /></td> `
+            }
+            for (var j = 0; j < objConfiguracionGlobal.propiedades.length; j++) {
+                propiedadActual = objConfiguracionGlobal.propiedades[j]
+
+                if (objConfiguracionGlobal.columnaimg != undefined && objConfiguracionGlobal.columnaimg.includes(propiedadActual))
+                    contenido += "<td><img style='width:100px;height:100px' src='" + obj[propiedadActual] + "' /></td>";
+
+                else
+                    contenido += "<td style='vertical-align:middle'><span>" + obj[propiedadActual] + "</span></td>";
+
+            }
+
+            if (objConfiguracionGlobal.editar == true || objConfiguracionGlobal.eliminar == true) {
+                //var propiedadId = objConfiguracionGlobal.propiedadId;
+                contenido += "<td>";
+                if (objConfiguracionGlobal.editar == true) {
+                    var tienepopup = objConfiguracionGlobal.popup
+                    contenido += `<i 
+                        ${tienepopup == true ? `data-bs-toggle="modal" data-bs-target="#${objConfiguracionGlobal.popupId}" ` : ``}
+                onclick=" ${objFormularioGlobal == undefined ? `CallbackEditar(${obj[objConfiguracionGlobal.propiedadId]})` :
+                            `EditarGenerico(${obj[objConfiguracionGlobal.propiedadId]})`
+                        } " class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
+                  </svg ></i>`
+                }
+                if (objConfiguracionGlobal.eliminar == true) {
+                    contenido += `
+             <i onclick="CallbackEliminar(${obj[objConfiguracionGlobal.propiedadId]})"
+                       class="btn btn-danger"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                  class="bi bi-trash-fill" viewBox="0 0 16 16">
+                 <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                        </svg></i>
+            `
+                }
+                contenido += "</td>";
+            }
+
+
+            contenido += "</tr>";
+        }
+    }
+    contenido += "</tbody>"
+    contenido += "<tfoot id='tdPagina'>";
+    contenido += "</tfoot>";
+
+    contenido += "</table></div>";
+    return contenido;
+    */
+}
 
 //Inicializa o formulário preenchendo os combobox
 metodoConstrutor("BuscarCursoFK", "Curso", "cb", "nomeCurso", "comboboxCurso");
