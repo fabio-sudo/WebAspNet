@@ -566,12 +566,32 @@ async function BuscarConteudoGrid(url) {
 
         rows += `<tr><td> 
                        <img style="width:100px;height:100px" src="${item.alunoCls.imgStr}">
-                      </td></tr>`;
+                       <td style='vertical-align:middle'><span> ${item.ordemMatricula}</span></td>
+                       <td style='vertical-align:middle'><span> ${item.alunoCls.nomeAluno}</span></td>
+                       <td style='vertical-align:middle'><span> ${item.alunoCls.cpfAluno}</span></td>
+                       <td style='vertical-align:middle'><span> ${item.alunoCls.celularAluno}</span></td>
+                       <td style='vertical-align:middle'><span> ${item.cursoCls.nomeCurso}</span></td>
+                       <td style='vertical-align:middle'><span> ${item.professorCls.nomeProfessor}</span></td>
+                       <td style='vertical-align:middle'><span> ${item.periodoCls.nomePeriodo}</span></td>
+                       <td style='vertical-align:middle'><span> ${item.diaSemanaCurso}</span></td>
+                       <td style='vertical-align:middle'><span> ${item.statusCurso}</span></td> 
+                       <td class='botoesDentroGrid'>
+                        <div id="btAlterar">
+                        <i data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"></path>
+                        </svg></i>
+                        </div>
+                        <div id="btExcluir">
+                        <i onclick="" class="btn btn-danger" > <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"></path>
+                        </svg></i>
+                        </div>
+                        </td>`
+
     });
 
     return rows;
 }
-
 
 async function GerarTabelaPrincipal() {
 
@@ -608,15 +628,16 @@ async function GerarTabelaPrincipal() {
     <thead>
       <tr>
         <th scope="col">Foto</th>
-        <th scope="col">Matricula</th>
+        <th scope="col">Ordem</th>
         <th scope="col">Nome</th>
         <th scope="col">CPF</th>
         <th scope="col">Contato</th>
         <th scope="col">Curso</th>
         <th scope="col">Professor</th>
         <th scope="col">Período</th>
-        <th scope="col">Dia do Curso</th>
+        <th scope="col">Dia</th>
         <th scope="col">Status</th>
+        <th scope="col">Operações</th>
      </tr>
     </thead>
     <body>
@@ -636,13 +657,6 @@ ${corpoTabela}
 
     criaTabela.insertAdjacentHTML('beforeend', tabela);
 /*
- * 
- *     <td>
-    <img style="width:100px;height:100px" src="${}">
-    </td>
-    <td style='vertical-align:middle'><span>" ${} "</span></td>
-
-
     var nregistros = dataCompleta.length;
     var obj;
     var propiedadActual;
@@ -653,6 +667,7 @@ ${corpoTabela}
     for (var i = inicio; i < fin; i++) {
         if (nregistros - 1 >= i) {
             obj = res[i]
+
             contenido += `<tr ${objConfiguracionGlobal != null && objConfiguracionGlobal.cursor != undefined ?
                 "style='cursor:pointer'" : ''}
 

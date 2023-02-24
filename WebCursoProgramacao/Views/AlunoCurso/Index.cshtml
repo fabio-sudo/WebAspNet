@@ -3,7 +3,7 @@
 }
 <h1>Matricula</h1>
 
-<button onclick="EditarGenerico(0)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastrarAlterarAlunoCurso">
+<button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastrarAlterarAlunoCurso">
     Novo
 </button>
 
@@ -32,14 +32,7 @@
                             <option class="form-control" value="Sabado">Sabado</option>
                         </select>
                      </div>
-                     
-                    <!-- <div class="col-md-6"> -->
-                            <!---   <label>Status</label>-->
-                            <!---   <select class="form-control" name="statusAlunoCurso">-->
-                              <!---     <option class="form-control" value="Espera">Espera</option>-->
-                              <!---     <option class="form-control" value="Cursando">Cursando</option>-->
-                             <!---  </select>-->
-                            <!---  </div>-->
+                    
 
                        <!--Criação dos combobox dinamicamente    -->
                        <div class="col-md-6">
@@ -66,6 +59,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="btnCerrarModal" data-bs-dismiss="modal">Sair</button>
+
                 <button type="button" class="btn btn-primary" onclick="GuardarGenericoFormulario('frmFormulario','popup')">Salvar</button>
             </div>
         </div>
