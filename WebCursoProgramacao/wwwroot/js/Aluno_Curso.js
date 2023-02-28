@@ -1,7 +1,6 @@
 ﻿window.onload = function () {
 
     GerarTabelaPrincipal();
-    listar();
 
 }
 

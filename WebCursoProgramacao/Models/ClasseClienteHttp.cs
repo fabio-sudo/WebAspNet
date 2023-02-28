@@ -90,6 +90,7 @@ namespace WebCursoProgramacao.Models
 
                 cliente.BaseAddress = new Uri(url);
                 var retorno = await cliente.PostAsJsonAsync<T>(rota, obj);
+
                 if (retorno.IsSuccessStatusCode)
                 {
                     string escreva = await retorno.Content.ReadAsStringAsync();

@@ -1010,6 +1010,31 @@ var idradios = [];
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function GuardarGenericoFormulario(idformulario, type) {
     var errores = ValidarDatos(idformulario)
     if (errores != "") {
@@ -1058,6 +1083,28 @@ function GuardarGenericoFormulario(idformulario, type) {
         })
     })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function LimpiarGenericoBusqueda(idformulario) {
     idsChecks = []

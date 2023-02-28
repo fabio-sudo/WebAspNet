@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
+
 <h1>Matricula</h1>
 
 <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastrarAlterarAlunoCurso">
@@ -60,7 +61,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="btnCerrarModal" data-bs-dismiss="modal">Sair</button>
 
-                <button type="button" class="btn btn-primary" onclick="GuardarGenericoFormulario('frmFormulario','popup')">Salvar</button>
+                <button type="button" class="btn btn-primary" onclick="metodoCadastrar();">Salvar</button>
             </div>
         </div>
     </div>
@@ -78,7 +79,6 @@
 
 @section Scripts{
 
-    <script src="~/js/Aluno_Curso.js"></script>
-    <script src="~/js/AlunoCursoCrud.js" defer></script>
+    <script src="~/js/AlunoCurso.js"></script>
     <link href="~/css/estilo.css" rel="stylesheet">
 }

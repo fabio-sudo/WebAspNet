@@ -4,11 +4,12 @@
     {
         public int IdPeriodo { get; set; }
 
-        public string NomePeriodo { get; set; } = null!;
 
-        public DateTime? HorarioInicial { get; set; }
+        public string NomePeriodo { get; set; } = "";
 
-        public DateTime? HorarioFinal { get; set; }
+        public DateTime? HorarioInicial { get; set; } = null!;
+
+        public DateTime? HorarioFinal { get; set; } = null!;
 
         public string? HorarioInicialStr { get; set; } = "";
 

@@ -4,9 +4,9 @@
     {
         public int IdCurso { get; set; }
 
-        public string NomeCurso { get; set; } = null!;
+        public string NomeCurso { get; set; } = "";
 
-        public string EmentaCurso { get; set; } = null!;
+        public string EmentaCurso { get; set; } = "";
 
         public string? DurcaoCurso { get; set; } = "";
     }
