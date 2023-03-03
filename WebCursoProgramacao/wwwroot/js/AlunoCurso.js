@@ -2,10 +2,9 @@
 window.onload = function () {
 
     GerarTabelaPrincipal();
-
 }
 
-
+//---------------------Variaveis 
 var data;
 var dataTabela;
 var dataTabelaCad = [];
@@ -19,28 +18,28 @@ async function metodoConstrutor(urlApi, objName, objConteiner) {
     //Atribuindo conteudo do HTML em uma variavel para JS
     const postsContainer = document.getElementById(objConteiner);
 
-        //Combobox
+    //Combobox
     var comboboxAlunoCruso = `<label>${objName}</label>
                                     <select name="${objName}" class="form-control">`;
 
-        //Listar objtos
-        data.map((item) => {
+    //Listar objtos
+    data.map((item) => {
 
-            if (objConteiner == "comboboxCurso") {
-                comboboxAlunoCruso += `<option class="form-control"  value="${item.idCurso}">${item.nomeCurso}</option>`
-                }
-            if (objConteiner == "comboboxPeriodo") {
-                comboboxAlunoCruso += `<option class="form-control"  value="${item.idPeriodo}">${item.nomePeriodo}</option>`
-                }
-            if (objConteiner == "comboboxProfessor") {
-                comboboxAlunoCruso += `<option class="form-control"  value="${item.idProfessor}">${item.nomeProfessor}</option>`
-                }
-        });
+        if (objConteiner == "comboboxCurso") {
+            comboboxAlunoCruso += `<option class="form-control"  value="${item.idCurso}">${item.nomeCurso}</option>`
+        }
+        if (objConteiner == "comboboxPeriodo") {
+            comboboxAlunoCruso += `<option class="form-control"  value="${item.idPeriodo}">${item.nomePeriodo}</option>`
+        }
+        if (objConteiner == "comboboxProfessor") {
+            comboboxAlunoCruso += `<option class="form-control"  value="${item.idProfessor}">${item.nomeProfessor}</option>`
+        }
+    });
 
     comboboxAlunoCruso += `</select>`;
-    
 
-   postsContainer.insertAdjacentHTML('beforeend', comboboxAlunoCruso);
+
+    postsContainer.insertAdjacentHTML('beforeend', comboboxAlunoCruso);
 
 }
 
@@ -503,26 +502,26 @@ async function limparGride() {
 }
 
 //-------------------------------------------------------Cria Tabela Principal
-//Combobox
+
 async function Filtros(url, id, nome, label) {
 
-        const response = await fetch(url);
-        var dataFiltro = await response.json();
+    const response = await fetch(url);
+    var dataFiltro = await response.json();
 
     var itemFiltro = '<option class="form-control" value="" >Todos</option >';
-        dataFiltro.map((item) => {
+    dataFiltro.map((item) => {
 
-            itemFiltro += `<option class="form-control" value="${item[id]}" >${item[nome]}</option >`
-        });
+        itemFiltro += `<option class="form-control" value="${item[id]}" >${item[nome]}</option >`
+    });
 
     var filtro = `    <div class="campoFiltro">
                       <label class"lbFiltro">${label}</label>
                       <select class="form-control" name="ListaCurso">
                        ${itemFiltro}   </select>
                        </div>`
-       ;
+        ;
 
-        return filtro;
+    return filtro;
 }
 
 async function BuscarConteudoGrid(url) {
@@ -562,12 +561,47 @@ async function BuscarConteudoGrid(url) {
     return rows;
 }
 
+async function AtualizaTabelaPrincipal() {
+
+    $("#tabelaPrincipal").remove();
+
+    const divTable = document.getElementById('Divtabela');
+
+    var corpoTabela = await BuscarConteudoGrid("BuscarAluno_Curso");
+
+    var tabela = `<table id='tabelaPrincipal' class='table'>
+        <thead>
+            <tr>
+                <th scope="col">Foto</th>
+                <th scope="col">Ordem</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Contato</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Professor</th>
+                <th scope="col">Período</th>
+                <th scope="col">Dia</th>
+                <th scope="col">Status</th>
+                <th scope="col">Operações</th>
+            </tr>
+        </thead>
+        <body>
+
+            ${corpoTabela}
+
+        </body>
+    </table>`;
+
+
+    divTable.insertAdjacentHTML('beforeend', tabela);
+}
+
 async function GerarTabelaPrincipal() {
 
     const criaTabela = document.getElementById('Tabela');
 
-    var filtroCurso = await  Filtros("BuscarCursoFK","idCurso", "nomeCurso", "Curso");
-    var filtroPeriodo = await Filtros("BuscarPeriodoFK","idPeriodo", "nomePeriodo", "Periodo");
+    var filtroCurso = await Filtros("BuscarCursoFK", "idCurso", "nomeCurso", "Curso");
+    var filtroPeriodo = await Filtros("BuscarPeriodoFK", "idPeriodo", "nomePeriodo", "Periodo");
     var filtroProfessor = await Filtros("BuscarProfessorFK", "idProfessor", "nomeProfessor", "Professor");
     var corpoTabela = await BuscarConteudoGrid("BuscarAluno_Curso");
 
@@ -592,8 +626,9 @@ async function GerarTabelaPrincipal() {
     var tabela = "<br/>";
     tabela += `${menuBusca}`;
     tabela += `
-    <div class='table-responsive'>
-    <table id='tablita' class='table'>
+    <div class='table-responsive' id="Divtabela">
+
+    <table id='tabelaPrincipal' class='table'>
     <thead>
       <tr>
         <th scope="col">Foto</th>
@@ -613,94 +648,16 @@ async function GerarTabelaPrincipal() {
 
 ${corpoTabela}
 
-
     </body>
     </table>
    </div>`;
 
-
     criaTabela.insertAdjacentHTML('beforeend', tabela);
-/*
-    var nregistros = dataCompleta.length;
-    var obj;
-    var propiedadActual;
-    var existeIdCheck = false;
-
-
-    contenido += "<tbody id='tbody'>";
-    for (var i = inicio; i < fin; i++) {
-        if (nregistros - 1 >= i) {
-            obj = res[i]
-
-            contenido += `<tr ${objConfiguracionGlobal != null && objConfiguracionGlobal.cursor != undefined ?
-                "style='cursor:pointer'" : ''}
-
-                        ${objConfiguracionGlobal != null && objConfiguracionGlobal.rowClickRecuperar != undefined ?
-                    `onclick='rowClickRecuperarGenerico(${obj[objConfiguracionGlobal.propiedadId]})'
-                    style='cursor:pointer'` : ""}
-
-                        ${objConfiguracionGlobal != null && objConfiguracionGlobal.rowClick != undefined ?
-                    `onclick='rowClickEvent(${JSON.stringify(obj)})'` : ""}
-                  >`;
-            if (objConfiguracionGlobal != undefined && objConfiguracionGlobal.check == true) {
-                existeIdCheck = (idsChecks.indexOf(obj[objConfiguracionGlobal.propiedadId]) > -1);
-                contenido += `<td><input type='checkbox'
-                                 ${existeIdCheck == true ? "checked" : ""}
-                                class='Check ${obj[objConfiguracionGlobal.propiedadId]}'
-                             name="${objConfiguracionGlobal.propiedadId}[]"
-                        value="${obj[objConfiguracionGlobal.propiedadId]}" /></td> `
-            }
-            for (var j = 0; j < objConfiguracionGlobal.propiedades.length; j++) {
-                propiedadActual = objConfiguracionGlobal.propiedades[j]
-
-                if (objConfiguracionGlobal.columnaimg != undefined && objConfiguracionGlobal.columnaimg.includes(propiedadActual))
-                    contenido += "<td><img style='width:100px;height:100px' src='" + obj[propiedadActual] + "' /></td>";
-
-                else
-                    contenido += "<td style='vertical-align:middle'><span>" + obj[propiedadActual] + "</span></td>";
-
-            }
-
-            if (objConfiguracionGlobal.editar == true || objConfiguracionGlobal.eliminar == true) {
-                //var propiedadId = objConfiguracionGlobal.propiedadId;
-                contenido += "<td>";
-                if (objConfiguracionGlobal.editar == true) {
-                    var tienepopup = objConfiguracionGlobal.popup
-                    contenido += `<i 
-                        ${tienepopup == true ? `data-bs-toggle="modal" data-bs-target="#${objConfiguracionGlobal.popupId}" ` : ``}
-                onclick=" ${objFormularioGlobal == undefined ? `CallbackEditar(${obj[objConfiguracionGlobal.propiedadId]})` :
-                            `EditarGenerico(${obj[objConfiguracionGlobal.propiedadId]})`
-                        } " class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
-                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
-                  </svg ></i>`
-                }
-                if (objConfiguracionGlobal.eliminar == true) {
-                    contenido += `
-             <i onclick="CallbackEliminar(${obj[objConfiguracionGlobal.propiedadId]})"
-                       class="btn btn-danger"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
-                  class="bi bi-trash-fill" viewBox="0 0 16 16">
-                 <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                        </svg></i>
-            `
-                }
-                contenido += "</td>";
-            }
-
-
-            contenido += "</tr>";
-        }
-    }
-    contenido += "</tbody>"
-    contenido += "<tfoot id='tdPagina'>";
-    contenido += "</tfoot>";
-
-    contenido += "</table></div>";
-    return contenido;
-    */
 }
 
 //----------------------------------------------------Metodos
 
+//PopUps
 function popUpErro(message) {
 
     Swal.fire({
@@ -734,6 +691,43 @@ function popUpOk(Message) {
 
 }
 
+function popUpConfirmacao() {
+
+    //---------------------Variaveis 
+
+    Swal.fire({
+        title: 'Deseja realizas as Matrículas?',
+        text: "Marícular alunos!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Marícular'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            metodoCadastrar();
+
+        }
+    })
+}
+
+//------------------Cadastrar
+function limparCadastro() {
+
+    data.length = 0;
+    dataTabela.length = 0;
+    dataTabelaCad.length = 0;
+
+    limpar();
+    tabelaCriar("BuscarAlunoFK", null);
+
+    document.getElementById("btSair").click();
+
+    AtualizaTabelaPrincipal();
+
+
+}
 
 async function metodoCadastrar() {
 
@@ -777,30 +771,28 @@ async function metodoCadastrar() {
             body: data
         })
             .then(response => {
-                popUpOk("Dados cadastrados com sucesso");
-                console.log(response);
+                if (response.status == 200) {
+
+                    limparCadastro();
+                    popUpOk("Dados cadastrados com sucesso");
+                    //AtualizaTabelaPrincipal();
+
+                } else {
+                    popUpErro("Não foi possível realziar o cadastro!");
+                }
             })
             .catch(error => {
                 popUpErro("Não foi possível realziar o cadastro!");
                 console.log(error);
             });
 
-
-
-
-
-
-
-
-
-
     }
 }
 
 //Inicializa o formulário preenchendo os combobox
-metodoConstrutor("BuscarCursoFK", "Curso","comboboxCurso");
+metodoConstrutor("BuscarCursoFK", "Curso", "comboboxCurso");
 metodoConstrutor("BuscarPeriodoFK", "Periodo", "comboboxPeriodo");
-metodoConstrutor("BuscarProfessorFK", "Professor","comboboxProfessor");
+metodoConstrutor("BuscarProfessorFK", "Professor", "comboboxProfessor");
 
 //inicializa o formulário preenchendo o gride
 tabelaCriar("BuscarAlunoFK", null);

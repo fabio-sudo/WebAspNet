@@ -75,8 +75,6 @@ function recuperarGenerico(url, idformulario, callback) {
     });
 }
 
-
-
 //------------------------------------------------------------Valida Campos
 function validarKeyPress(idformulario) {
 
@@ -145,8 +143,6 @@ function validarKeyPress(idformulario) {
 
     }
 }
-
-
 
 function ValidarDatos(idformulario) {
     var error = "";
@@ -348,7 +344,6 @@ function LimpiarDatos(idformulario) {
     }
 }
 
-
 //------------------------------------------------------------Recebe Url da aplicação e retorna url completa
 function setURL(url) {
     var raiz = document.getElementById("hdfOculto").value;
@@ -396,8 +391,6 @@ async function fetchGet(url, tiporespuesta, callback, retorno = false) {
 
     }
 }
-//[{"iidlaboratorio":1,"nombre":"SynLab","direccion":null,"personacontacto":null}
-//, { "iidlaboratorio": 2, "nombre": "Multilab", "direccion": null, "personacontacto": null }, { "iidlaboratorio": 3, "nombre": "Suiza Lab", "direccion": null, "personacontacto": null }]
 
 function llenarCombo(data, idcontrol, propiedadId, propiedadNombre, textoprimeraopcion = "--Seleccione--", valueprimeraopcion = "") {
 
@@ -465,7 +458,6 @@ async function fetchPostSinLoading(url, tiporespuesta, frm, callback) {
         alert("Ocurrion un error");
     }
 }
-
 
 var objConfiguracionGlobal;
 var objBusquedaGlobal;
@@ -686,9 +678,6 @@ function buscarCodigo(id) {
     return fila;
 }
 
-
-
-
 //Paginacion Simple
 var indicePagina = 0;
 //Paginacion Por Bloques
@@ -697,9 +686,6 @@ var indiceBloque = 0;
 
 var registrosPagina = 15;
 var idsChecks = [];
-
-
-
 
 function generarTabla(res) {
     var inicio = indicePagina * registrosPagina;
@@ -801,12 +787,6 @@ function generarTabla(res) {
     contenido += "</table></div>";
     return contenido;
 }
-
-
-
-
-
-
  
 
 function rowClickRecuperarGenerico(id) {
@@ -928,9 +908,6 @@ function paginar(indice) {
     manejoCheck()
 }
 
-
-
-
 function EditarGenerico(id) {
     LimpiarDatos(objFormularioGlobal.idformulario);
     //--------------------------------------------------------Formulário Add Novo
@@ -1007,33 +984,6 @@ function CallbackEditar(id) {
 }
 var objBusquedaCombos = [];
 var idradios = [];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function GuardarGenericoFormulario(idformulario, type) {
     var errores = ValidarDatos(idformulario)
